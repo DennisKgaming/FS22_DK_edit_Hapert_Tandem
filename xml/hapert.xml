@@ -1,0 +1,302 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<vehicle type="trailer" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../shared/xml/schema/vehicle.xsd">
+    <annotation>Copyright (C) GIANTS Software GmbH, All Rights Reserved.</annotation>
+
+    <storeData>
+        <name>Hapert Car Trailer</name>
+        <functions>
+            <function>$l10n_function_trailer</function>
+        </functions>
+        <image>icons/store_hapert.dds</image>
+        <price>5500</price>
+        <lifetime>600</lifetime>
+        <rotation>0</rotation>
+        <brand>HAPERT</brand>
+        <category>DennisKtools</category>
+        <shopTranslationOffset>0 0.26 0</shopTranslationOffset>
+    </storeData>
+
+    <base>
+        <typeDesc>$l10n_typeDesc_trailer</typeDesc>
+        <filename>i3d/Hapert.i3d</filename>
+        <size width="2.2" length="4.7" lengthOffset="0.7"/>
+        <components >
+            <component centerOfMass="0 -0.289 0.1" solverIterationCount="10" mass="1828" />
+        </components>
+        <schemaOverlay attacherJointPosition="0 0" name="IMPLEMENT" />
+    </base>
+
+    <wheels>
+        <wheelConfigurations>
+            <wheelConfiguration name="$l10n_configuration_valueDefault" price="0" brand="DENNISK" saveId="DENNISK_DEFAULT">
+                <wheels>
+                    <wheel filename="wheels/225_60R17.xml"  isLeft="true" hasTireTracks="true" >
+                        <physics tipOcclusionAreaGroupId="1" restLoad="0.5" repr="wheelFL_ref"  forcePointRatio="0.35"  initialCompression="20" suspTravel="0.08" spring="65" damper="50" frictionScale="2"/>
+                        <tire isCareWheel="false"/>
+                    </wheel>
+                    <wheel filename="wheels/225_60R17.xml"  isLeft="false" hasTireTracks="true" >
+                        <physics tipOcclusionAreaGroupId="2" restLoad="0.5" repr="wheelFR_ref" forcePointRatio="0.35"  initialCompression="20" suspTravel="0.08" spring="65" damper="50" frictionScale="2"/>
+                        <tire isCareWheel="false"/>
+                    </wheel>
+                    <wheel filename="wheels/225_60R17.xml"  isLeft="true" hasTireTracks="true" hasParticles="true" >
+                        <physics tipOcclusionAreaGroupId="1" restLoad="0.5" repr="wheelBL_ref"   forcePointRatio="0.35"  initialCompression="20" suspTravel="0.08" spring="65" damper="50" frictionScale="2"/>
+                        <tire isCareWheel="false"/>
+                    </wheel>
+                    <wheel filename="wheels/225_60R17.xml"  isLeft="false" hasTireTracks="true" hasParticles="true" >
+                        <physics tipOcclusionAreaGroupId="2" restLoad="0.5" repr="wheelBR_ref"  forcePointRatio="0.35"  initialCompression="20" suspTravel="0.08" spring="65" damper="50" frictionScale="2"/>
+                        <tire isCareWheel="false"/>
+                    </wheel>
+                </wheels>
+            </wheelConfiguration>
+        </wheelConfigurations>
+    </wheels>
+
+    <attachable>
+        <inputAttacherJoints>
+            <inputAttacherJoint node="attacherJoint" jointType="trailer" 	upperRotationOffset="0"/>
+			<inputAttacherJoint node="attacherJoint" jointType="trailerLow" upperRotationOffset="0"/>
+        </inputAttacherJoints>
+         <brakeForce force="1"/>
+        <support animationName="moveSupport" />
+    </attachable>
+
+    <lights>
+	
+		<sharedLight linkNode="frontLightL" 			filename="lights/frontLight06White.xml"/>
+		<sharedLight linkNode="frontLightR" 			filename="lights/frontLight06White.xml"/>
+		
+		<sharedLight linkNode="sidemarkerLightL_01" 	filename="lights/sideMarker05Orange.xml"/>
+		<sharedLight linkNode="sidemarkerLightL_02" 	filename="lights/sideMarker05Orange.xml"/>
+		<sharedLight linkNode="sidemarkerLightR_01" 	filename="lights/sideMarker05Orange.xml"/>
+		<sharedLight linkNode="sidemarkerLightR_02" 	filename="lights/sideMarker05Orange.xml"/>
+		
+		<sharedLight linkNode="countourLightL_01" 		filename="lights/sideMarker19_left.xml"/>
+		<sharedLight linkNode="countourLightL_02" 		filename="lights/sideMarker19_left.xml"/>
+		<sharedLight linkNode="countourLightR_01" 		filename="lights/sideMarker19_right.xml"/>
+		<sharedLight linkNode="countourLightR_02" 		filename="lights/sideMarker19_right.xml"/>
+	
+        <realLights>
+            <high>
+                <light 			node="backLightsHigh1" 			lightTypes="0" />
+                <light 			node="licensePlateLightHigh" 	lightTypes="0" />
+                <light 			node="sidemarkerLights_real" 	lightTypes="0" />
+                <light 			node="frontLights_real" 		lightTypes="0" />
+                <brakeLight 	node="backLightsHigh1" />
+				<reverseLight 	node="reverseLightHigh1" />
+                <turnLightLeft 	node="turnLightLeftBack" />
+                <turnLightRight	node="turnLightRightBack" />
+            </high>
+        </realLights>
+
+        <defaultLights>
+            <defaultLight 	shaderNode="backlightStaticR" 			lightTypes="0" intensity="25" />
+			<defaultLight 	shaderNode="backlightStaticL" 			lightTypes="0" intensity="25" />
+			
+			<defaultLight 	shaderNode="plateNumberLightR_static"	lightTypes="0" intensity="25" />
+			<defaultLight 	shaderNode="plateNumberLightL_static" 	lightTypes="0" intensity="25" />
+        </defaultLights>
+		
+		<turnLights>
+            <turnLightLeft 	shaderNode="turnlightLeftStatic" 		intensity="30" />
+            <turnLightRight	shaderNode="turnlightRightStatic" 		intensity="30" />
+        </turnLights>
+
+        <brakeLights>
+            <brakeLight 	shaderNode="brakelightStaticR" />
+			<brakeLight 	shaderNode="brakelightStaticL" />
+        </brakeLights>
+
+        <reverseLights>
+            <reverseLight 	shaderNode="reverseLightStaticR" 		intensity="40"/>
+			<reverseLight 	shaderNode="reverseLightStaticL" 		intensity="40"/>
+        </reverseLights>
+		
+		<beaconLights>
+			<beaconLight node="flashLightL" filename="lights/Flash/Flash.xml"/>
+			<beaconLight node="flashLightR" filename="lights/Flash/Flash2.xml"/>
+		</beaconLights>
+		
+    </lights>
+
+    <licensePlates>
+        <licensePlate node="EUPlate" position="BACK" preferedType="SQUARISH" placementArea="0.07 0.18 0.14 0.18"/>
+    </licensePlates>
+
+    <animations>
+        <animation name="moveSupport">
+            <part node="Support" 		startTime="0" duration="1.5" startTrans="0.243 0.248 1.774" 	endTrans="0.243 0.134 1.774" />
+			<part node="supportLeveler" startTime="0" duration="1.5" startRot="0 0 0" 					endRot="0 1080 0"/>
+			
+			<sound template="clackVar6" startTime="0.01" direction="-1" volumeScale="1" pitchScale="1" linkNode="0>6"/>
+        </animation>
+        <animation name="Door">
+            <part node="doorHatchL" startTime="0" 	endTime="0.3" starTrans="0.741 0.418 -0.005" 	endTrans="0.675 0.418 -0.005" />
+			<part node="doorHatchR" startTime="0" 	endTime="0.3" starTrans="-0.741 0.418 -0.005"	endTrans="-0.675 0.418 -0.005" />
+			<part node="Door" 		startTime="0.3"	endTime="1.5" startRot="0 0 0" 					endRot="-145 0 0" />
+        </animation>
+    </animations>
+	
+	<foldable>
+        <foldingConfigurations>
+            <foldingConfiguration>
+                <foldingParts startMoveDirection="0" >
+                    <foldingPart animationName="Door" speedScale="1" />
+                </foldingParts>
+              </foldingConfiguration>
+        </foldingConfigurations>
+    </foldable>
+	
+	<tensionBelts>
+        <tensionBeltsConfigurations>
+            <tensionBeltsConfiguration>
+                <tensionBelts linkNode="0>5" jointNode="0>" width="0.075" maxEdgeLength="0.1" geometryBias="0.01" ratchetPosition="0.5" defaultOffset="0.1" defaultOffsetSide="0.1" defaultHeight="3.5" activationTrigger="beltActivationTrigger">
+                    <tensionBelt startNode="beltStart1" endNode="beltEnd1" offsetLeft="1.5">
+                    </tensionBelt>
+                    <tensionBelt startNode="beltStart2" endNode="beltEnd2" >
+                    </tensionBelt>
+                    <tensionBelt startNode="beltStart3" endNode="beltEnd3" > 
+                    </tensionBelt>
+                    <tensionBelt startNode="beltStart4" endNode="beltEnd4" >  
+                    </tensionBelt>
+                    <tensionBelt startNode="beltStart5" endNode="beltEnd5" >
+                    </tensionBelt>
+                   
+					<sounds>
+                        <addBelt    template="beltOpen" />
+                        <removeBelt template="beltClose" />
+                    </sounds>
+                </tensionBelts>
+            </tensionBeltsConfiguration>
+        </tensionBeltsConfigurations>
+    </tensionBelts>
+
+    <foliageBending>
+        <bendingNode minX="-1" maxX="1" minZ="-2.5" maxZ="2.5" yOffset="-0.7" />
+        <bendingNode minX="-1" maxX="1" minZ="-0.5" maxZ="0.5" yOffset="-0.8" node="Door"/>
+    </foliageBending>
+
+    <baseMaterial>
+        <material name="body_mat" baseNode="Trailer_vis">
+            <shaderParameter name="colorMat0" value="SHARED_WHITE1" material="4"/>
+			<shaderParameter name="colorMat3" value="SHARED_REDCRIMSON"/>
+        </material>
+    </baseMaterial>
+
+    <baseMaterialConfigurations useDefaultColors="false">
+        <material name="body_mat" shaderParameter="colorMat0"/>
+		
+	    <baseMaterialConfiguration name="Galvanized" color="SHARED_WHITE1" material="4"/>
+    </baseMaterialConfigurations>
+	
+	<designMaterialConfigurations useDefaultColors="true" defaultColorIndex="0">
+        <material name="body_mat" shaderParameter="colorMat3"/>
+		
+		<designMaterialConfiguration name="DennisK Dark Blue" 	color="0.005 0.001 0.533"/>
+		<designMaterialConfiguration name="DennisK Light Blue" 	color="0.000 0.776 1.000"/>
+		<designMaterialConfiguration name="DennisK Black" 		color="0 0 0"/>
+		<designMaterialConfiguration name="Black Matt" 			color="0.015 0.015 0.015" material="23"/>
+    </designMaterialConfigurations>
+	
+	<designConfigurations price="500" title="Additional Lights">
+		<designConfiguration name="No">
+			<objectChange node="additionalLights"	visibilityActive="false"	visibilityInactive="true"/>
+		</designConfiguration>
+		<designConfiguration name="Yes">
+			<objectChange node="additionalLights"	visibilityActive="true"	visibilityInactive="false"/>
+		</designConfiguration>
+	</designConfigurations>
+	
+	<design2Configurations price="500" title="Flasher Lights">
+		<design2Configuration name="No">
+			<objectChange node="flasherLights"		visibilityActive="false"	visibilityInactive="true"/>
+		</design2Configuration>
+		<design2Configuration name="Yes">
+			<objectChange node="flasherLights"		visibilityActive="true"	visibilityInactive="false"/>
+		</design2Configuration>
+	</design2Configurations>
+
+    <rimColorConfigurations useDefaultColors="true" >
+	    <rimColorConfiguration name="Galvanized" color="SHARED_WHITE1" material="4"/>
+    </rimColorConfigurations>
+
+    <ai>
+        <agentAttachment jointNode="attacherJoint" rotCenterWheelIndices="1 2 3 4" width="2.1" height="1.5" length="4.9" lengthOffset="0.7"/>
+    </ai>
+
+    <wearable wearDuration="480" workMultiplier="5" fieldMultiplier="2"/>
+	
+    <washable dirtDuration="90" washDuration="1" workMultiplier="2" fieldMultiplier="2"/>
+	
+	<i3dMappings>
+        <i3dMapping id="wheelBL_ref" 				node="0>0|0"/>
+        <i3dMapping id="wheelFR_ref" 				node="0>1|0"/>
+        <i3dMapping id="wheelFL_ref" 				node="0>2|0"/>
+        <i3dMapping id="wheelBR_ref" 				node="0>3|0"/>
+		
+        <i3dMapping id="supportLeveler" 			node="0>4|0"/>
+		
+        <i3dMapping id="Door" 						node="0>4|1"/>
+        <i3dMapping id="doorHatchL" 				node="0>4|1|1"/>
+        <i3dMapping id="doorHatchR" 				node="0>4|1|2"/>
+		
+        <i3dMapping id="Support" 					node="0>4|2"/>
+		
+        <i3dMapping id="Trailer_vis" 				node="0>4|3|0"/>
+		
+        <i3dMapping id="backlightStaticR" 			node="0>4|4|0|4"/>
+        <i3dMapping id="turnlightRightStatic" 		node="0>4|4|0|2"/>
+        <i3dMapping id="reverseLightStaticR" 		node="0>4|4|0|3"/>
+        <i3dMapping id="brakelightStaticR" 			node="0>4|4|0|5"/>
+		
+        <i3dMapping id="turnlightLeftStatic" 		node="0>4|4|1|2"/>
+        <i3dMapping id="reverseLightStaticL" 		node="0>4|4|1|3"/>
+        <i3dMapping id="backlightStaticL" 			node="0>4|4|1|4"/>
+        <i3dMapping id="brakelightStaticL" 			node="0>4|4|1|5"/>
+		
+        <i3dMapping id="backLightsHigh1" 			node="0>4|4|2|0"/>
+		
+        <i3dMapping id="turnLightLeftBack" 			node="0>4|4|3|0"/>
+        <i3dMapping id="turnLightRightBack" 		node="0>4|4|3|1"/>
+		
+        <i3dMapping id="reverseLightHigh1" 			node="0>4|4|4|0"/>
+        <i3dMapping id="plateNumberLightR_static" 	node="0>4|4|5|0|1"/>
+        <i3dMapping id="plateNumberLightL_static" 	node="0>4|4|5|1|1"/>
+        <i3dMapping id="licensePlateLightHigh" 		node="0>4|4|5|2"/>
+		
+        <i3dMapping id="licensePlateLightHigh" 		node="0>4|4|5|2"/>
+		
+        <i3dMapping id="additionalLights" 			node="0>4|4|6"/>
+        <i3dMapping id="frontLightL" 				node="0>4|4|6|0|0"/>
+        <i3dMapping id="frontLightR" 				node="0>4|4|6|0|1"/>
+        <i3dMapping id="sidemarkerLightL_01" 		node="0>4|4|6|1|0"/>
+        <i3dMapping id="sidemarkerLightL_02" 		node="0>4|4|6|1|1"/>
+        <i3dMapping id="sidemarkerLightR_01" 		node="0>4|4|6|1|2"/>
+        <i3dMapping id="sidemarkerLightR_02" 		node="0>4|4|6|1|3"/>
+        <i3dMapping id="countourLightL_01" 			node="0>4|4|6|2|0"/>
+        <i3dMapping id="countourLightL_02" 			node="0>4|4|6|2|1"/>
+        <i3dMapping id="countourLightR_01" 			node="0>4|4|6|2|2"/>
+        <i3dMapping id="countourLightR_02" 			node="0>4|4|6|2|3"/>
+        <i3dMapping id="sidemarkerLights_real" 		node="0>4|4|6|3|0"/>
+        <i3dMapping id="frontLights_real" 			node="0>4|4|6|3|1"/>
+        <i3dMapping id="flasherLights" 				node="0>4|4|7"/>
+        <i3dMapping id="flashLightL" 				node="0>4|4|7|0"/>
+        <i3dMapping id="flashLightR" 				node="0>4|4|7|1"/>
+		
+        <i3dMapping id="EUPlate" 					node="0>4|5"/>
+		
+        <i3dMapping id="beltStart1" 				node="0>5|0"/>
+        <i3dMapping id="beltEnd1" 					node="0>5|0|0"/>
+        <i3dMapping id="beltStart2" 				node="0>5|1"/>
+        <i3dMapping id="beltEnd2" 					node="0>5|1|0"/>
+        <i3dMapping id="beltStart3" 				node="0>5|2"/>
+        <i3dMapping id="beltEnd3" 					node="0>5|2|0"/>
+        <i3dMapping id="beltStart4" 				node="0>5|3"/>
+        <i3dMapping id="beltEnd4" 					node="0>5|3|0"/>
+        <i3dMapping id="beltStart5" 				node="0>5|4"/>
+        <i3dMapping id="beltEnd5" 					node="0>5|4|0"/>
+        <i3dMapping id="beltActivationTrigger" 		node="0>5|5"/>
+		
+        <i3dMapping id="attacherJoint" 				node="0>6"/>
+	</i3dMappings>
+
+</vehicle>

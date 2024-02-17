@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<modDesc descVersion="66">
+    <author>AgroTron Modding</author>
+    <version>1.1.0.0</version>
+    <title>
+        <en>Hapert Car Trailer DK edit</en>
+    </title>
+	
+    <description>
+        <en>Hapert Car Trailer</en>
+    </description>
+	
+    <iconFilename>icons/icon_hapert.png</iconFilename>	
+	
+    <multiplayer supported="true"/>	
+
+    <storeItems>
+        <storeItem xmlFilename="xml/hapert.xml"/>
+    </storeItems>
+	
+	<brands>
+        <brand name="HAPERT" title="Hapert" image="icons/brand.dds"/>
+	</brands>
+	
+	<extraSourceFiles>
+        <sourceFile filename="scripts/categorizer.lua"/>
+    </extraSourceFiles>
+	
+	<newcategory name="DennisKtools" title="DennisK" type="TOOL" img="Categories/CategoryTools.png" />
+	
+</modDesc>
